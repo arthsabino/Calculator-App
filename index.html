@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+    <div class="container calculator-container">
+      <div class="label-container flex-container">
+        <span>calc</span>
+        <div class="theme-container flex-container">
+          <span>theme</span>
+          <div class="theme-buttons-container">
+            <div class="theme-number-container flex-container">
+              <span class="theme-items">1</span>
+              <span class="theme-items">2</span>
+              <span class="theme-items">3</span>
+            </div>
+            <div class="theme-number-container flex-container">
+              <button type="button" class="btn btn-theme theme-items" value="1"></button>
+              <button type="button" class="btn btn-theme theme-items" value="2"></button>
+              <button type="button" class="btn btn-theme theme-items" value="3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="input-container">
+        <input type="number" placeholder="0">
+      </div>
+      <div class="operation-container grid-container">
+        <button class="btn btn-calc-input btn-number" data-value="7">7</button>
+        <button class="btn btn-calc-input btn-number" data-value="8">8</button>
+        <button class="btn btn-calc-input btn-number" data-value="9">9</button>
+        <button class="btn btn-calc-op btn-del" data-value="del">DEL</button>
+        <button class="btn btn-calc-input btn-number" data-value="4">4</button>
+        <button class="btn btn-calc-input btn-number" data-value="5">5</button>
+        <button class="btn btn-calc-input btn-number" data-value="6">6</button>
+        <button class="btn btn-calc-op btn-add" data-value="+">+</button>
+        <button class="btn btn-calc-input btn-number" data-value="1">1</button>
+        <button class="btn btn-calc-input btn-number" data-value="2">2</button>
+        <button class="btn btn-calc-input btn-number" data-value="3">3</button>
+        <button class="btn btn-calc-op btn-minus" data-value="-">-</button>
+        <button class="btn btn-calc-op btn-dot" data-value=".">.</button>
+        <button class="btn btn-calc-input btn-number" data-value="0">0</button>
+        <button class="btn btn-calc-op btn-div" data-value="/">/</button>
+        <button class="btn btn-calc-op btn-multiply" data-value="x">x</button>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/arthsabino/">Your Name Here</a>.
+    </div>
+  </body>
 </html>

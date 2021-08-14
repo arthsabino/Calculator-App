@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root {
+    --main-bg1: hsl(222, 26%, 31%);
+    --toggle-bg1: hsl(223, 31%, 20%);
+    --screen-bg1: hsl(224, 36%, 15%);
+    --key-bg1: hsl(225, 21%, 49%);
+    --key-shadow1: hsl(224, 28%, 35%);
+    --key-bg-red1: hsl(6, 63%, 50%);
+    --key-bg-dark-red1: hsl(6, 70%, 34%);
+    --key-bg-orange1: hsl(30, 25%, 89%);
+    --key-shadow-orange1: hsl(28, 16%, 65%);
+    --text1: hsl(221, 14%, 31%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+}
+
+body {
+    background-color: var(--main-bg1);
+}
+
+.container {
+    margin: 0 auto;
+    height: auto;
+}
+
+.calculator-container {
+    width: 450px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.label-container span{
+    color: #fff;
+}
+
+.label-container > span:first-child {
+    flex-grow: 1;
+}
+
+.theme-container {
+    text-transform: uppercase;
+}
+
+.theme-container span,
+.theme-container button {
+    font-size: 0.5em;
+}
+
+.theme-buttons-container {
+    padding-left: 0.6em;
+}
+
+.theme-number-container {
+    justify-content: space-evenly;
+}
+
+.theme-items {
+    margin: 0 0.2em;
+}
+
+.btn {
+    vertical-align: middle;
+}
