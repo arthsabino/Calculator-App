@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-1">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="script.js"></script>
     <title>Frontend Mentor | Calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -27,34 +27,44 @@
               <span class="theme-items">2</span>
               <span class="theme-items">3</span>
             </div>
-            <div class="theme-number-container flex-container">
-              <button type="button" class="btn btn-theme theme-items" value="1"></button>
-              <button type="button" class="btn btn-theme theme-items" value="2"></button>
-              <button type="button" class="btn btn-theme theme-items" value="3"></button>
+            <div class="theme-number-container theme-buttons flex-container">
+              <button type="button" class="btn btn-theme btn-active theme-items" data-value="1"></button>
+              <button type="button" class="btn btn-theme theme-items" data-value="2"></button>
+              <button type="button" class="btn btn-theme theme-items" data-value="3"></button>
             </div>
           </div>
         </div>
       </div>
       <div class="input-container">
-        <input type="number" placeholder="0">
+        <input class="calculator-input" type="text" placeholder="0">
       </div>
       <div class="operation-container grid-container">
-        <button class="btn btn-calc-input btn-number" data-value="7">7</button>
-        <button class="btn btn-calc-input btn-number" data-value="8">8</button>
-        <button class="btn btn-calc-input btn-number" data-value="9">9</button>
-        <button class="btn btn-calc-op btn-del" data-value="del">DEL</button>
-        <button class="btn btn-calc-input btn-number" data-value="4">4</button>
-        <button class="btn btn-calc-input btn-number" data-value="5">5</button>
-        <button class="btn btn-calc-input btn-number" data-value="6">6</button>
-        <button class="btn btn-calc-op btn-add" data-value="+">+</button>
-        <button class="btn btn-calc-input btn-number" data-value="1">1</button>
-        <button class="btn btn-calc-input btn-number" data-value="2">2</button>
-        <button class="btn btn-calc-input btn-number" data-value="3">3</button>
-        <button class="btn btn-calc-op btn-minus" data-value="-">-</button>
-        <button class="btn btn-calc-op btn-dot" data-value=".">.</button>
-        <button class="btn btn-calc-input btn-number" data-value="0">0</button>
-        <button class="btn btn-calc-op btn-div" data-value="/">/</button>
-        <button class="btn btn-calc-op btn-multiply" data-value="x">x</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="7">7</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="8">8</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="9">9</button>
+        <button class="btn btn-calc btn-calc-op btn-del" data-value="del">
+          <span>
+            Del
+          </span>
+        </button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="4">4</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="5">5</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="6">6</button>
+        <button class="btn btn-calc btn-calc-input btn-operator btn-add" data-value="+">+</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="1">1</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="2">2</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="3">3</button>
+        <button class="btn btn-calc btn-calc-input btn-operator btn-minus" data-value="-">-</button>
+        <button class="btn btn-calc btn-calc-input btn-number btn-dot" data-value=".">.</button>
+        <button class="btn btn-calc btn-calc-input btn-number" data-value="0">0</button>
+        <button class="btn btn-calc btn-calc-input btn-operator btn-div" data-value="/">/</button>
+        <button class="btn btn-calc btn-calc-input btn-operator btn-multiply" data-value="x">x</button>
+        <button class="btn btn-calc btn-calc-op span-2 btn-reset" data-value="reset">
+          <span>
+            Reset
+          </span>
+        </button>
+        <button class="btn btn-calc btn-calc-op span-2 btn-equals" data-value="=">=</button>
       </div>
     </div>
     <div class="attribution">

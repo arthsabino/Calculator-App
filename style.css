@@ -1,16 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
-:root {
-    --main-bg1: hsl(222, 26%, 31%);
-    --toggle-bg1: hsl(223, 31%, 20%);
-    --screen-bg1: hsl(224, 36%, 15%);
-    --key-bg1: hsl(225, 21%, 49%);
-    --key-shadow1: hsl(224, 28%, 35%);
-    --key-bg-red1: hsl(6, 63%, 50%);
-    --key-bg-dark-red1: hsl(6, 70%, 34%);
-    --key-bg-orange1: hsl(30, 25%, 89%);
-    --key-shadow-orange1: hsl(28, 16%, 65%);
-    --text1: hsl(221, 14%, 31%);
+
+.theme-1 {
+    --main-bg: hsl(222, 26%, 31%);
+    --toggle-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-bg-equals: hsl(6, 63%, 50%);
+    --key-bg-equals-shadow: hsl(6, 70%, 34%);
+    --key-calc-input: hsl(30, 25%, 89%);
+    --key-calc-input-shadow: hsl(28, 16%, 65%);
+    --text: #fff;
+    --text-equals: #fff;
+    --text-numbers: hsl(221, 14%, 31%);
+    --text-operators: #fff;
+}
+
+.theme-2 {
+    --main-bg: hsl(0, 0%, 90%);
+    --toggle-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+    --key-bg: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+    --key-bg-equals: hsl(25, 98%, 40%);
+    --key-bg-equals-shadow: hsl(25, 99%, 27%);
+    --key-calc-input: hsl(45, 7%, 89%);
+    --key-calc-input-shadow: hsl(35, 11%, 61%);
+    --text: hsl(60, 10%, 19%);
+    --text-equals: #fff;
+    --text-numbers: hsl(60, 10%, 19%);
+    --text-operators: #fff;
+}
+
+.theme-3 {
+    --main-bg: hsl(268, 75%, 9%);
+    --toggle-bg: hsl(268, 71%, 12%);
+    --screen-bg: hsl(268, 71%, 12%);
+    --key-bg: hsl(281, 89%, 26%);
+    --key-shadow: hsl(185, 58%, 25%);
+    --key-bg-equals: hsl(176, 100%, 44%);
+    --key-bg-equals-shadow: hsl(177, 92%, 70%);
+    --key-calc-input: hsl(268, 47%, 21%);
+    --key-calc-input-shadow: hsl(290, 70%, 36%);
+    --text: hsl(52, 100%, 62%);
+    --text-equals: hsl(198, 20%, 13%);
+    --text-numbers: hsl(52, 100%, 62%);
+    --text-operators: #fff;
 }
 
 * {
@@ -22,7 +58,14 @@
 }
 
 body {
-    background-color: var(--main-bg1);
+    background-color: var(--main-bg);
+    color: var(--text);
+}
+
+input {
+    width: 100%;
+    outline: none;
+    border: none;
 }
 
 .container {
@@ -31,7 +74,7 @@ body {
 }
 
 .calculator-container {
-    width: 450px;
+    width: 550px;
 }
 
 .flex-container {
@@ -41,10 +84,23 @@ body {
 
 .grid-container {
     display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
-.label-container span{
-    color: #fff;
+.span-2 {
+    grid-column: span 2;
+}
+
+.btn {
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+}
+
+.label-container {
+    padding: 0.5em 0;
+    align-items: flex-end;
 }
 
 .label-container > span:first-child {
@@ -53,6 +109,7 @@ body {
 
 .theme-container {
     text-transform: uppercase;
+    align-items: flex-end;
 }
 
 .theme-container span,
@@ -61,17 +118,93 @@ body {
 }
 
 .theme-buttons-container {
-    padding-left: 0.6em;
+    padding-left: 0.3em;
 }
 
 .theme-number-container {
     justify-content: space-evenly;
 }
 
-.theme-items {
-    margin: 0 0.2em;
+.theme-buttons {
+    background-color: var(--toggle-bg);
+    border-radius: 15px;
 }
 
-.btn {
-    vertical-align: middle;
+.btn-theme {
+    background-color: var(--key-bg-equals);
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+}
+
+.btn-theme:not(.btn-active) {
+    background-color: transparent;
+}
+
+.theme-items {
+    margin: 0.4em;
+}
+
+input.calculator-input {
+    color: var(--text);
+    background-color: var(--screen-bg);
+    padding: 0.8em;
+    text-align: end;
+    border-radius: 10px;
+    margin: 0.5em 0;
+}
+
+input.calculator-input::placeholder {
+    color: var(--text);
+}
+
+.operation-container {
+    grid-template-columns: repeat(4, minmax(22%, auto));
+    grid-column-end: 2;
+    gap: 0.7em;
+    background-color: var(--toggle-bg);
+    border: none;
+    border-radius: 10px;
+    padding: 1em 0.8em;
+}
+
+.btn-calc {
+    border-radius: 8px;
+    padding: 0.5em 0;
+    min-height: 1em;
+}
+
+.btn-calc-input {
+    background-color: var(--key-calc-input);
+    color: var(--text-numbers);
+    box-shadow: 0px 5px var(--key-calc-input-shadow);
+}
+
+.btn-calc-op {
+    background-color: var(--key-bg);
+    box-shadow: 0px 5px var(--key-shadow);
+    text-transform: uppercase;
+}
+
+.btn-calc-op span {
+    font-size: 0.6em;
+    color: var(--text-operators);
+}
+
+.btn-equals {
+    color: var(--text-equals);
+    background-color: var(--key-bg-equals);
+    box-shadow: 0px 5px var(--key-bg-equals-shadow);
+}
+/* Chrome, Safari, Edge, Opera */
+/* removes spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
