@@ -151,4 +151,4 @@ function toggleTheme() {
     } else {
         setTheme('theme-1');
     }
- }
+}

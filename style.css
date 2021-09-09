@@ -75,6 +75,7 @@ input {
 
 .calculator-container {
     width: 550px;
+    margin-bottom: 2em;
 }
 
 .flex-container {
